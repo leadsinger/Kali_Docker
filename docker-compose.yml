@@ -1,0 +1,13 @@
+version: '3'
+services:
+  kali_machine:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./root:/root
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    cap_add:
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
